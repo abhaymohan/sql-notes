@@ -1,0 +1,41 @@
+THEORY
+
+1. delete clause can be used to delete rows from table
+
+SYNTAX
+
+1.delete from table_name
+where  
+condition;
+
+2. delete rows based on another table
+delete from tableA
+using tableB
+where tableA.id = tableB.id
+
+3. deleting all rows from the table
+delete from table_name
+
+4. adding returning call
+delete from table_name
+where 
+condition
+returning
+column1, column2 ,........
+// specified columns of deleted rows will be retruned
+
+EXAMPLE
+
+1.
+delete from job
+where 
+job_name = 'scientist';
+
+2.
+delete from job
+where 
+job_name = 'doctor'
+returning 
+job_id , job_name;
+// job_id and job_name of deleted rows will be returned
+

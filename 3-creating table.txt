@@ -1,0 +1,39 @@
+
+==> SYNTAX
+
+create table table_name (
+column_name type column_constraint,
+column_name type coulmn_constraint,
+table_contraint table_constraint
+) inherits existing_table_name;
+
+
+example = 
+1. create table players(
+player_id     serial       primary key,
+age             smallint     not null
+);
+
+2. 
+create table account (
+	user_id serial primary key,
+	username varchar(20) unique not null,
+	password varchar(20) not null,
+	email vharchar(250) unique not null,
+	created_on timestamp not null,
+	last_login timestamp
+);
+
+3. 
+create table job (
+	job_id serial primary key,
+	job_name varchar(200) unique not null
+);
+
+4. here we define foreign keys user_id and job_id in our table
+create table account_job(
+	user_id integer references account(user_id),
+	job_id integer references job(job_id),
+	hire_date timestamp
+); 
+

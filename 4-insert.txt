@@ -1,0 +1,48 @@
+THEORY
+
+1. serial columns do not need to be provided a value,
+serial auto updates the value when new row is inserted.
+
+
+SYNTAX
+
+1. 
+insert into table (column1, column2, ....)
+values
+(value1,value2,....),
+(value1,value2,....),
+.......;
+
+2. inserting values from table2 and storing them in table1
+
+insert into table1(column1, column2, .....)
+select column1, column2,.....
+from table2
+where condition;
+
+EXAMPLES
+
+1. 
+insert into account (username,password,email,created_on)
+values
+('abhay','abhay1234','abhay@gmail.com',current_timestamp)
+
+// current_timestamp is a method in timestamp library it returns current timestamp //and save it in column
+
+2.
+insert into job (job_name)
+values
+('astronaut');
+
+3. inserting multiple rows in a table
+insert into job (job_name)
+values
+('doctor'),
+('engineer');
+
+4. here user_id and job_id are foriegn keys
+insert into account_job(user_id, job_id, hire_date)
+values
+(1,1,current_timestamp);
+
+

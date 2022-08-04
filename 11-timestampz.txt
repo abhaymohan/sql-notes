@@ -1,0 +1,26 @@
+DATE / TIME / TIMESTAMP / TIMESTAMPZ
+
+1. show timezone
+it will show your timezone your database is using
+~ Asia/Culcutta
+
+2. select now()
+// now() gives you current date + time + timezone
+~ 2022-07-13 20:22:23.861562+05:30
+
+
+3. select timeofday()
+it gives you same details as now() but in more 
+understandable way
+~ Wed Jul 13 20:26:37.860300 2022 IST
+
+
+4. select current_time                      
+not a function  current_time() wrong
+gives you current time with timezone
+~ 20:28:56.122038+05:30
+
+5. select current_date                         
+not a function current_date() wrong
+gives you current date
+~ 2202-07-13             // yyyy-mm-dd format

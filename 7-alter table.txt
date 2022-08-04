@@ -1,0 +1,55 @@
+
+THEORY
+
+alter clause allows us to change to an existing table structure such as
+1.adding , dropping , or renaming columns
+2. changing a column's data type
+3. set default values for a column
+4. add check constraints
+5. rename table
+
+SYNTAX
+
+1. to add new column
+alter table table_name
+add column    columnn_name   column_type
+
+2. removing column
+alter table table_name
+drop column colume_name       // only one column can be deleted
+
+3. alter constraints
+alter table table_name
+alter column column_name
+set default value;
+
+4.alter table table_name
+alter column column_name
+drop default                                                        
+
+5. alter table table_name
+alter column column_name
+set not null                       // dropping a constraint
+
+6. alter table table_name
+alter column colmun_name
+add constraint constraint_name 
+
+
+EXAMPLE
+
+1. renaming the table
+alter table information
+rename to new_info;
+
+2. renaming the column name
+alter table new_info                //new_info first table name
+rename column person to people;
+
+3. dropping a constraint from a column 
+alter table information
+alter column person drop not null;
+
+4. setting a constraint on a column
+alter table information
+alter column person set not null;

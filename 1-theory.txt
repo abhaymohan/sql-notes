@@ -1,0 +1,16 @@
+
+
+1. use only single quotes ' ' for string, double quotes gives error 
+
+2. comments in sql
+single line --
+multiline /* */ 
+
+3. we try to add a constraint later on a column by alter table like set not null than there may be an error if column has values that voilates the constraint. like if column already has null values than we can't add not null constraint first we have to replace those null values.
+
+4. Every table can have (but does not have to have) a primary key.
+
+5.  we can also drop primary key column.
+
+6. serial value increases with each try of insertion, it increases even if insertion fails.
+

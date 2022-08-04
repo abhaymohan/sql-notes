@@ -1,0 +1,9 @@
+==> joins
+1. inner join
+2. full outer join
+3. left join
+4. right join
+5. natural join
+6. self join
+7. cross join
+8. update join // in update section

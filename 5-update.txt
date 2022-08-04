@@ -1,0 +1,64 @@
+THEORY
+
+1.rule 1 = column in the left is always the belongs to table specified in update clause
+else there will be error this is also true for update join.
+
+
+SYNTAX
+
+1. this will update the rows where this condition is satisfied
+update table
+set 
+column1 = value1,
+column2 = value2,
+columnN = valueN
+where 
+condition;
+
+
+2. this will update all rows
+update table
+column1 = value1,
+column2 = value2,
+columnN = valueN;
+
+3. we can also update value based on another column
+update account
+set 
+column1 = column2;
+
+4. using another table  // also known as update join
+update tableA
+set original_col = tableB.new_col  // dont't write tableA.original_col  (error)
+from tableB
+where 
+tableA.id = tableB.id
+
+
+5. returning updated rows
+update table_name
+set column1 = column2
+returning column1, column2......
+
+// columns specified in returning clause are returned
+
+EXAMPLE
+
+1. all rows will be updated
+update account
+set last_login = current_timestamp;
+
+2. only rows where condition is true is updated
+update account
+set
+last_login  = current_timestamp
+where
+last_login is NULL;
+
+3. value updated based on another column
+update account_job
+set
+hire_date = account.created_on   // don't write account_job.hire_date 
+from account 
+where 
+account_job.user_id = account.user_id;

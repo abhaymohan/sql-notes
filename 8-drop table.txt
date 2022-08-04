@@ -1,0 +1,59 @@
+THEORY
+
+1. drop allows for the complete removal of a column in a table.
+2. in postgresql this will also automatically remove all 
+of its indexes and constraints involving the column.
+3. but, it will not remove columns used in views, 
+triggers, or stored procedures without additional CASCADE clause.
+
+
+SYNTAX
+
+1. 
+alter table table_name
+drop column column_name;
+
+2. to remove all dependencies
+alter table table_name
+drop column column_name cascade;
+
+{a good example of cascade is that if we are dropping a 
+primary key and this primary key is foreign key in another 
+table than here we will be having problem in dropping the 
+column as it has dependency but with cascade we can 
+delete it will remove that dependency of foreign key but 
+column will exist in dependent table as in example.}
+
+3. check for existence to avoid error
+alter table table_name
+drop column if exists column_name;
+
+4. drop multiple columns
+alter table table_name
+drop column column_name,
+drop column column_name,
+
+
+EXAMPLE
+
+1. dropping primary key that is foreign key in another table
+alter table account
+drop column user_id cascade;
+
+{as user_id is foreign key in account_job so we have to use 
+cascade to remove that dependency but account_job will still 
+have user_id column but it will not be reffering 
+user_id of account as it has been deleted.}
+
+2.
+alter table information 
+drop column person;
+
+3. dropping primary key
+alter table information
+drop column info_id;
+
+4. 
+alter table information 
+drop column if exists person;
+
